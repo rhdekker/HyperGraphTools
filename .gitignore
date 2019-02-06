@@ -1,0 +1,7 @@
+**/*.iml
+**/*.jl.*.cov
+**/*.jl.cov
+**/*.jl.mem
+**/.idea
+**/.ipynb_checkpoints
+**/deps/deps.jl
