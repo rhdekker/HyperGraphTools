@@ -16,31 +16,46 @@ julia>tokens = tokenize("[r>tagml example<r]")
 """
 module SimpleTAGMLTokenizer
 
-export tokenize
+export tokenize,Token,OPENTAG,CLOSETAG,TEXT
+
+@enum(TokenType,
+    OPENTAG,
+    CLOSETAG,
+    TEXT
+)
+
+struct Token
+    content::String
+    type::TokenType
+end
 
 function tokenize(tagml::String)
-    tokens = []
+    tokens = Token[]
     token_buf = IOBuffer()
+    token_type = TEXT
     for char in tagml
         if (char == '[' || char == '<')
-            token = String(take!(token_buf))
-            if (token != "")
-                push!(tokens,token)
-            end
-            token_buf = IOBuffer()
+            _push_token!(tokens, token_buf, token_type)
+            token_type = (char == '[') ? OPENTAG : CLOSETAG
             print(token_buf,char)
         elseif (char == '>' || char == ']')
             print(token_buf,char)
-            token = String(take!(token_buf))
-            if (token != "")
-                push!(tokens,token)
-            end
-            token_buf = IOBuffer()
+            _push_token!(tokens, token_buf, token_type)
+            token_type = TEXT
         else
             print(token_buf,char)
         end
     end
     return tokens
+end
+
+function _push_token!(tokens, token_buf, token_type)
+    token_content = String(take!(token_buf))
+    if (token_content != "")
+        token = Token(token_content,token_type)
+        push!(tokens,token)
+    end
+    token_buf = IOBuffer()
 end
 
 end
