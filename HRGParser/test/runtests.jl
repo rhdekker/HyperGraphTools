@@ -7,5 +7,5 @@ runtests:
 using Test
 
 @testset "all tests" begin
-    include("test_parser.jl")
+    include("test.jl")
 end
