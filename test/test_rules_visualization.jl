@@ -11,7 +11,8 @@ include("util.jl")
 
 @testset "rules_visualization" begin
     using HyperGraphTools
-    import HRGVisualization
+    using HyperGraphTools.HRGVisualization
+
     rules = Dict{String, HyperGraph{String}}(
         "S" => HyperGraph([HyperEdge("JOHN", ["_"], ["_"])]),
         "JOHN" => HyperGraph([HyperEdge("John", ["_"], ["3"]), HyperEdge("LOVES",["3"], ["_"])]),
