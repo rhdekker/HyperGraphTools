@@ -3,5 +3,5 @@ Build status:
 
 Code coverage:
 [![Coverage Status](https://coveralls.io/repos/github/brambg/HyperGraphTools/badge.svg?branch=master)](https://coveralls.io/github/brambg/HyperGraphTools?branch=master)
+[![codecov](https://codecov.io/gh/brambg/HyperGraphTools/branch/master/graph/badge.svg)](https://codecov.io/gh/brambg/HyperGraphTools)
 
-[![codecov][codecov-img]](http://codecov.io/github/brambg/HyperGraphTools?branch=master)
