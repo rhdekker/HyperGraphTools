@@ -18,3 +18,5 @@ notifications:
 #  - (cd HRGParser && julia -e 'import Pkg;Pkg.add(pwd()); Pkg.build("HRGParser"); Pkg.test("HRGParser"; coverage=true)')
 codecov: true
 coveralls: true
+before_script:
+  - julia -e 'import Pkg; Pkg.add("Test")'
