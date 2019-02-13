@@ -24,7 +24,7 @@ using Test
         Token(" ",TEXT),
         Token("[name>",OPENTAG),
         Token("Stroopwafels",TEXT),
-#         Token("<name]",CLOSETAG),
+        Token("<name]",CLOSETAG),
         Token("<b]",CLOSETAG),
         Token("<root]",CLOSETAG)
     ]
