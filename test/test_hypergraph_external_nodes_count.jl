@@ -3,7 +3,7 @@ using Test
 include("util.jl")
 
 @testset "hypergraph_external_nodes_count" begin
-    using HyperGraphTools
+    using HRGVisualization
 
     hg = HyperGraph{String}(HyperEdge[
         HyperEdge("John", ["_"], ["3"]),
