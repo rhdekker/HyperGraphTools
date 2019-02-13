@@ -8,4 +8,8 @@ using Test
 
 @testset "all tests" begin
     include("test_parser.jl")
+
+    include("test_hypergraph_visualization.jl")
+    include("test_rules_visualization.jl")
+    include("test_hypergraph_external_nodes_count.jl")
 end

@@ -10,7 +10,7 @@ using Test
 include("util.jl")
 
 @testset "rules_visualization" begin
-    using HRGVisualization
+    using HyperGraphTools
     rules = Dict{String, HyperGraph{String}}(
         "S" => HyperGraph([HyperEdge("JOHN", ["_"], ["_"])]),
         "JOHN" => HyperGraph([HyperEdge("John", ["_"], ["3"]), HyperEdge("LOVES",["3"], ["_"])]),

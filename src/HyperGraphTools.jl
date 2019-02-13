@@ -13,7 +13,17 @@ julia>
 """
 module HyperGraphTools
     include("SimpleTAGMLTokenizer.jl")
+    include("HRGVisualization.jl")
 
-    import .SimpleTAGMLTokenizer: tokenize,Token,OPENTAG,CLOSETAG,TEXT
-    export tokenize,Token,OPENTAG,CLOSETAG,TEXT
+    import .SimpleTAGMLTokenizer: tokenize, Token, OPENTAG, CLOSETAG, TEXT
+    import .HRGVisualization: to_dot, HRGrammarRules, HyperEdge, HyperGraph, display
+
+    export tokenize,
+       Token,
+       OPENTAG,CLOSETAG,TEXT,
+       to_dot,
+       HRGrammarRules,
+       HyperEdge,
+       HyperGraph,
+       display
 end
