@@ -5,15 +5,15 @@ os:
 #  - osx
 #  - windows % The language 'julia' is currently unsupported on the Windows Build Environment.
 julia:
-  - 1.1.0
-#  - nightly
+#  - 1.1.0
+  - nightly
 matrix:
   allow_failures:
     - julia: nightly
 notifications:
   email: false
 script:
-  - (cd HRGVisualization.jl && julia -e 'import Pkg;Pkg.add("Test");Pkg.add(pwd()); Pkg.build("HRGVisualization"); Pkg.test("HRGVisualization"; coverage=true)')
+  - (cd HRGVisualization.jl && julia -e 'import Pkg;Pkg.add("Test");Pkg.add(PackageSpec(path=pwd())); Pkg.build("HRGVisualization"); Pkg.test("HRGVisualization"; coverage=true)')
 #  - (cd SimpleTAGMLTokenizer && julia -e 'import Pkg;Pkg.add(pwd()); Pkg.build("SimpleTAGMLTokenizer"); Pkg.test("SimpleTAGMLTokenizer"; coverage=true)')
 #  - (cd HRGParser && julia -e 'import Pkg;Pkg.add(pwd()); Pkg.build("HRGParser"); Pkg.test("HRGParser"; coverage=true)')
 codecov: true
