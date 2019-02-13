@@ -42,4 +42,3 @@ cs[:LT](-2)[:text]
 cs[:fill]()
 t=cs[:getTokens](0,25)
 map(x->x[:text],t)
-

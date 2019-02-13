@@ -1,4 +1,4 @@
-name = "HRGVisualization"
+name = "HyperGraphTools"
 uuid = "70a5c7a0-1fc2-11e9-30cb-2de098e0529f"
 authors = ["Bram Buitendijk <bram.buitendijk@di.huc.knaw.nl>"]
 version = "0.1.0"
