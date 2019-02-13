@@ -5,7 +5,8 @@ os:
 #  - osx
 #  - windows % The language 'julia' is currently unsupported on the Windows Build Environment.
 julia:
-  - nightly
+  - 1.1.0
+#  - nightly
 matrix:
   allow_failures:
     - julia: nightly
