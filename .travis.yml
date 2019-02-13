@@ -3,7 +3,7 @@ language: julia
 os:
   - linux
   - osx
-  - windows
+#  - windows % The language 'julia' is currently unsupported on the Windows Build Environment.
 julia:
   - nightly
 matrix:
@@ -12,8 +12,8 @@ matrix:
 notifications:
   email: false
 script:
-  - julia -e 'Pkg.clone(pwd()*"/HRGVisualization"); Pkg.build("HRGVisualization"); Pkg.test("HRGVisualization"; coverage=true)'
-  - julia -e 'Pkg.clone(pwd()*"/SimpleTAGMLTokenizer"); Pkg.build("SimpleTAGMLTokenizer"); Pkg.test
-  - julia -e 'Pkg.clone(pwd()*"/HRGParser"); Pkg.build("HRGParser"); Pkg.test("HRGParser"; coverage=true)'
+  - julia -e 'import Pkg;Pkg.clone(pwd()*"/HRGVisualization"); Pkg.build("HRGVisualization"); Pkg.test("HRGVisualization"; coverage=true)'
+  - julia -e 'import Pkg;Pkg.clone(pwd()*"/SimpleTAGMLTokenizer"); Pkg.build("SimpleTAGMLTokenizer"); Pkg.test
+  - julia -e 'import Pkg;Pkg.clone(pwd()*"/HRGParser"); Pkg.build("HRGParser"); Pkg.test("HRGParser"; coverage=true)'
 codecov: true
 coveralls: true
