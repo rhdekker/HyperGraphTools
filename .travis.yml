@@ -1,0 +1,20 @@
+# Documentation: http://docs.travis-ci.com/user/languages/julia/
+language: julia
+os:
+  - linux
+  - osx
+  - windows
+julia:
+  - nightly
+matrix:
+  allow_failures:
+    - julia: nightly
+notifications:
+  email: false
+script:
+  - julia -e 'Pkg.clone(pwd()*"/HRGVisualization"); Pkg.build("HRGVisualization"); Pkg.test("HRGVisualization"; coverage=true)'
+  - julia -e 'Pkg.clone(pwd()*"/SimpleTAGMLTokenizer"); Pkg.build("SimpleTAGMLTokenizer"); Pkg.test
+  - julia -e 'Pkg.clone(pwd()*"/HRGParser"); Pkg.build("HRGParser"); Pkg.test
+("HRGParser"; coverage=true)'
+codecov: true
+coveralls: true
