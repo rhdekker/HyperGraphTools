@@ -12,8 +12,8 @@ matrix:
     - julia: nightly
 notifications:
   email: false
-script:
-  - julia -e 'import Pkg;Pkg.add("Test");Pkg.add(Pkg.PackageSpec(path=pwd()*"HRGVisualization")); Pkg.build("HRGVisualization"); Pkg.test("HRGVisualization"; coverage=true)'
+#script:
+#  - julia -e 'import Pkg;Pkg.add("Test");Pkg.add(Pkg.PackageSpec(path=pwd()*"HRGVisualization")); Pkg.build("HRGVisualization"); Pkg.test("HRGVisualization"; coverage=true)'
 #  - (cd SimpleTAGMLTokenizer && julia -e 'import Pkg;Pkg.add(pwd()); Pkg.build("SimpleTAGMLTokenizer"); Pkg.test("SimpleTAGMLTokenizer"; coverage=true)')
 #  - (cd HRGParser && julia -e 'import Pkg;Pkg.add(pwd()); Pkg.build("HRGParser"); Pkg.test("HRGParser"; coverage=true)')
 codecov: true

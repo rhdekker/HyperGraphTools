@@ -7,7 +7,7 @@ test_parser:
 using Test
 
 @testset "simple_tagml_tokenizer" begin
-    using SimpleTAGMLTokenizer
+    using HyperGraphTools
 
     tagml = "[root>[a>[name>Cookie Monster<name] [b>loves<a] [name>Stroopwafels<name]<b]<root]"
     tokens = tokenize(tagml)
