@@ -10,7 +10,6 @@ using Test
 include("util.jl")
 
 @testset "rules_visualization" begin
-    using HyperGraphTools
     using HyperGraphTools.HRGVisualization
 
     rules = Dict{String, HyperGraph{String}}(

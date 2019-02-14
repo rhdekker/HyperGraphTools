@@ -16,12 +16,15 @@ julia>tokens = tokenize("[r>tagml example<r]")
 """
 module SimpleTAGMLTokenizer
 
-export tokenize,Token,OPENTAG,CLOSETAG,TEXT
+export tokenize,
+    Token,
+    TokenType,OPENTAG,CLOSETAG,TEXT,ERROR
 
 @enum(TokenType,
     OPENTAG,
     CLOSETAG,
-    TEXT
+    TEXT,
+    ERROR
 )
 
 struct Token
@@ -32,7 +35,7 @@ end
 function tokenize(tagml::String)
     tokens = Token[]
     token_buf = IOBuffer()
-    token_type = TEXT
+    token_type = ERROR
     for char in tagml
         if (char == '[' || char == '<')
             _push_token!(tokens, token_buf, token_type)
@@ -45,6 +48,11 @@ function tokenize(tagml::String)
         else
             print(token_buf,char)
         end
+    end
+    token_content = String(take!(token_buf))
+    if (token_content != "")
+        token = Token(token_content,ERROR)
+        push!(tokens,token)
     end
     return tokens
 end

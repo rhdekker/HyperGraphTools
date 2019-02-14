@@ -3,7 +3,7 @@ using Test
 include("util.jl")
 
 @testset "hypergraph_visualization" begin
-    using HyperGraphTools
+    using HyperGraphTools.HRGVisualization
 
     he1 = HyperEdge("S", ["1"], ["2"])
     he_dot = to_dot(he1)

@@ -7,7 +7,7 @@ runtests:
 using Test
 
 @testset "all tests" begin
-    include("test_parser.jl")
+    include("test_tokenizer.jl")
 
     include("test_hypergraph_visualization.jl")
     include("test_rules_visualization.jl")
