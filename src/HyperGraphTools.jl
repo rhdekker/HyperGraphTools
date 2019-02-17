@@ -15,4 +15,5 @@ module HyperGraphTools
     include("simple_tagml_tokenizer.jl")
     include("visualization.jl")
     include("parser.jl")
+    include("partiallyorderedparser.jl")
 end
